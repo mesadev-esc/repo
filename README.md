@@ -1,16 +1,5 @@
-## Archived
-
-I started this project to provide a non-complex way for IOS Jailbreak tweak developers to host packages and depictions on their personal repositories. What started as a hobby has become one of the most popular Cydia repo templates - 272 forks and 173 stars as of this writing.
-
-But life catches up and what was a hobby now has reached it's time to wind down. 
-
-Thank you for all the support.
-
----
-
 # Reposi3
-
-A Cydia repository template. This template contains sample on how you can easily make depiction pages without replicating your html pages. The pages are styled using [Bootstrap](http://getbootstrap.com/) which is really easy to use. You can see how it looks like by visiting [this sample repo](https://supermamon.github.io/Reposi3/) on your desktop or mobile phone.
+A Cydia repository template. This template contains sample on how you can easily make depiction pages without replicating your html pages. The pages are styled using [Bootsrap](http://getbootstrap.com/) which is really easy to use. You can see how it looks like by visiting [this sample repo](https://supermamon.github.io/Reposi3/) on your desktop or mobile phone.
 
 Most data for this repo is stored on XML files and are loaded on the depiction page dynamically. See the guide below on how to set it up. Note that this guide doesn't cover creating .deb files but will briefly cover assiging depictions.
 
@@ -46,14 +35,12 @@ Edit `Release` file. Modify the items pointed by `<--`
 
 **Branding**
 
+Open `index.html` and look at lines 18 and 19.
+Change line 18 into your own **brand** and line 19 to have your own URL.
+Line2 27-44 contains the list of featured packages.
+You can edit those too or remove them totally.
 
-
-Edit `index.html`
-* Change the page title in the `<title>Reposi3</title>` tag
-* See lines 20 and 21.
-* Change line 20 into your own **brand** and line 21 to have your own URL.
-* Line2 30-51 contains the list of featured packages. You can edit those or remove them totally.
-* Replace CydiaIcon.png.
+Replace CydiaIcon.png.
 
 
 **Page Footers**
@@ -79,7 +66,7 @@ This data are the links that appear at the bottom of every depication. The data 
 
 
 #### 3. Your repo is _almost_ ready.
-At this point your commit your changes to github and your repo is basically ready to be added into Cydia.
+At this point your repo is basically ready to be added into Cydia.
 You can also visit your repo's homepage by going to `https://username.github.io/repo/`.
 It will come with 2 sample packages, Old Package and New Package.
 Each of the packages have a link on this page pointing to their depictions.
@@ -94,7 +81,7 @@ Rename the duplicate with the same name as your package name.
 There are 2 files inside the folder - `info.xml` and `changelog.xml`.
 Update the 2 files with information regading your package.
 The tags are pretty much self-explanatory.
-Contact [@reposi3](https://twitter.com/reposi3) for questions.
+Contact [@reposi3](https://twitter.com/reposi3) or [@supermamon](https://twitter.com/supermamon) for questions.
 
 `info.xml`.
 ```xml
@@ -137,15 +124,10 @@ Contact [@reposi3](https://twitter.com/reposi3) for questions.
 
 #### 2. Link the depiction page your tweak's `control` file
 
-For the depictions to appear on Cydia, you will need to add the depictions url at the end of your package's `control` file before compiling it.
-The control file should look like this:
+You can add the depictions url at the end of your package's `control` file before compiling it.
+The depiction line should look like this:
 
 ```text
-Package: com.supermamon.oldpackage
-Name: Old Package
-Section: Tweaks
-Depends: firmware (<7.0)
-Description: This is a sample old package. Firmware should be lower than 7.0
 Depiction: https://username.github.io/repo/depictions/?p=[idhere]
 ```
 
@@ -171,7 +153,7 @@ _Windows users, see [dpkg-scanpackages-py](https://github.com/supermamon/dpkg-sc
 
 #### 5. Cydia at last!
 
-Push your changes again to Github and if you haven't done yet, go ahead and add your repo to Cydia.
+If you haven't done yet, go ahead and add your repo to Cydia.
 You should now be able to install your tweak into your own repo.
 
 ### Cleanup
